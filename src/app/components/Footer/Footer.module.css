@@ -1,0 +1,16 @@
+.footer {
+    background-color: #1f1f1f;
+    padding: 1.5rem 0;
+    text-align: center;
+    color: #ccc;
+    margin-top: 1rem;
+}
+
+.footer a:hover {
+    color: #e50914;
+}
+
+.footer__text {
+    margin: 0;
+    font-size: 0.875rem;
+}
