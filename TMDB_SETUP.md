@@ -14,6 +14,7 @@
 3. **Configurar no projeto:**
    - Abra o arquivo `.env.local` na raiz do projeto
    - Substitua `your_tmdb_api_key_here` pela sua chave real:
+
    ```
    TMDB_API_KEY=sua_chave_da_api_aqui
    ```
@@ -24,6 +25,7 @@
    ```
 
 ## Observações:
+
 - Sem a chave da API, a aplicação funcionará com dados mockados
 - A aplicação não quebrará se a API não estiver configurada
 - Os dados da API aparecerão assim que a chave for configurada corretamente

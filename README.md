@@ -5,6 +5,7 @@ Uma aplicação moderna de catálogo de filmes construída com **Next.js 15**, *
 ## ✨ Características
 
 ### 🎯 **Funcionalidades Principais**
+
 - **Listagem de filmes** em alta/populares/top-rated
 - **Detalhes completos** de cada filme
 - **Design responsivo** e moderno
@@ -12,6 +13,7 @@ Uma aplicação moderna de catálogo de filmes construída com **Next.js 15**, *
 - **Fallback inteligente** para dados locais
 
 ### 🎨 **Interface**
+
 - **Componentes modulares** com CSS Modules
 - **Gradientes modernos** e sombras profissionais
 - **Botões animados** com hover effects
@@ -19,6 +21,7 @@ Uma aplicação moderna de catálogo de filmes construída com **Next.js 15**, *
 - **Typography hierárquica** para melhor UX
 
 ### 🔧 **Tecnologias**
+
 - **Next.js 15** com App Router
 - **TypeScript** para type safety
 - **CSS Modules** para estilização modular
@@ -28,17 +31,20 @@ Uma aplicação moderna de catálogo de filmes construída com **Next.js 15**, *
 ## 🚀 Como Executar
 
 ### 1. **Clone o repositório**
+
 ```bash
 git clone <url-do-repositorio>
 cd cinelista
 ```
 
 ### 2. **Instale as dependências**
+
 ```bash
 npm install
 ```
 
 ### 3. **Configure a API do TMDB (Opcional)**
+
 ```bash
 # Crie o arquivo .env.local na raiz do projeto
 TMDB_API_URL=https://api.themoviedb.org/3/
@@ -46,12 +52,14 @@ TMDB_API_KEY=sua_chave_da_api_aqui
 ```
 
 **📝 Como obter a chave da API:**
+
 1. Crie uma conta em [themoviedb.org](https://www.themoviedb.org/)
 2. Vá em **Settings** > **API**
 3. Solicite uma **API Key (v3 auth)**
 4. Copie e cole no `.env.local`
 
 ### 4. **Execute o servidor de desenvolvimento**
+
 ```bash
 npm run dev
 ```
@@ -92,16 +100,19 @@ cinelista/
 ## 🎨 Componentes Principais
 
 ### **Card Component**
+
 - **Hover effects** profissionais
 - **Navegação** para detalhes do filme
 - **Imagens otimizadas** com fallback
 
 ### **Grid Component**
+
 - **Layout responsivo** com CSS Grid
 - **Espaçamento consistente**
 - **Adaptação automática** ao tamanho da tela
 
 ### **Página de Detalhes**
+
 - **Layout moderno** com poster e informações
 - **Botão animado** de voltar
 - **Typography hierárquica**
@@ -111,11 +122,13 @@ cinelista/
 A aplicação possui um **sistema inteligente de fallback**:
 
 ### ✅ **Com API configurada:**
+
 - Carrega filmes reais da API do TMDB
 - Dados sempre atualizados
 - Maior variedade de filmes
 
 ### 🔄 **Sem API ou erro:**
+
 - **Fallback automático** para dados locais
 - **Aplicação nunca quebra**
 - **Experiência consistente** para o usuário
@@ -149,7 +162,7 @@ Contribuições são bem-vindas! Agradeço desde já. Sinta-se à vontade para:
 
 ## 📝 Licença
 
-Este projeto está sob a licença **MIT**. 
+Este projeto está sob a licença **MIT**.
 
 ## 🙏 Agradecimentos
 

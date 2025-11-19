@@ -4,13 +4,13 @@ import { getPopularMovies } from "@/lib/api/tmdb";
 
 export const revalidate = 60; // Atualiza a cada 60 segundos para manter os filmes populares atualizados.
 const FilmesPopulares = async () => {
-    const filmes = await getPopularMovies();
+  const filmes = await getPopularMovies();
 
-    return (
-        <>
-            <Title title="Filmes Populares" />
-            <Grid filmes={filmes} />
-        </>
-    );
+  return (
+    <>
+      <Title title="Filmes Populares" />
+      <Grid filmes={filmes} />
+    </>
+  );
 };
 export default FilmesPopulares;
