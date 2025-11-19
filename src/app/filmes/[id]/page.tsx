@@ -46,17 +46,20 @@ const DetalheFilme = async ({ params }: Props) => {
         <span className={styles.arrow}>←</span>
         <span className={styles.text}>Voltar</span>
       </Link>
-      <Image
-        className={styles.detalhes__imagem}
-        src={`${process.env.NEXT_PUBLIC_TMDB_API_IMG_URL}${poster_path}`}
-        alt={`Poster do filme ${title}`}
-        width={500}
-        height={750}
-      />
 
-      <div className={styles.detalhes__info}>
-        <h2>{title}</h2>
-        <p>{overview}</p>
+      <div className={styles.detalhes__container}>
+        <Image
+          className={styles.detalhes__imagem}
+          src={`${process.env.NEXT_PUBLIC_TMDB_API_IMG_URL}${poster_path}`}
+          alt={`Poster do filme ${title}`}
+          width={500}
+          height={750}
+        />
+
+        <div className={styles.detalhes__info}>
+          <h2>{title}</h2>
+          <p>{overview}</p>
+        </div>
       </div>
     </div>
   );
