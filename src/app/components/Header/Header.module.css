@@ -1,7 +1,12 @@
 .header {
   background-color: #1f1f1f;
   padding: 1rem 2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header__container {
