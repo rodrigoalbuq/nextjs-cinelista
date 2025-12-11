@@ -24,3 +24,8 @@ jobs:
         
       - name: Rodar o build
         run: npm run build
+        env:
+         TMDB_API_URL: ${{ vars.TMDB_API_URL}}
+         TMDB_API_KEY: ${{secrets.TMDB_API_KEY}}
+         NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL}}
+
