@@ -53,7 +53,6 @@ jobs:
       - name: Instalação das dependências    
         run: npm install 
         
-        
       - name: Rodar o lint
         run: npm run lint
 
