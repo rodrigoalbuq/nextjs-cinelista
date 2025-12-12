@@ -1,5 +1,5 @@
 import Grid from "@/app/components/Grid";
-import Title from "@/app/components/Tiltle";
+import Title from "@/app/components/Title";
 import { getPopularMovies } from "@/lib/api/tmdb";
 
 export const dynamic = "force-dynamic"; //  Permitir atualizações frequentes para refletir as mudanças nos filmes em alta.

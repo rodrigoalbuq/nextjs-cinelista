@@ -1,5 +1,5 @@
 import Grid from "@/app/components/Grid";
-import Title from "@/app/components/Tiltle";
+import Title from "@/app/components/Title";
 import { getTopMovies } from "@/lib/api/tmdb";
 // Gerar página estática para evitar chamadas repetidas à API, já que os top filmes não mudam com frequência. Vai ser atualizado somente em novas builds.
 export const dynamic = "force-static";

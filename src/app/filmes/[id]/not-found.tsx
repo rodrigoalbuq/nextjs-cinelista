@@ -1,4 +1,4 @@
-import Title from "../../components/Tiltle";
+import Title from "../../components/Title";
 import Link from "next/link";
 import styles from "./NotFound.module.css";
 

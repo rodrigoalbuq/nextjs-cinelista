@@ -1,5 +1,5 @@
 import Grid from "@/app/components/Grid";
-import Title from "@/app/components/Tiltle";
+import Title from "@/app/components/Title";
 import { getPopularMovies } from "@/lib/api/tmdb";
 
 export const revalidate = 60; // Atualiza a cada 60 segundos para manter os filmes populares atualizados.
