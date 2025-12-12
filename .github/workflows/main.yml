@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest # Imagem da máquina usada no CI
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Instalação do Node
         uses: actions/setup-node@v4
@@ -26,7 +26,7 @@ jobs:
           cache-dependency-path: package-lock.json
           
       - name: Instalação das dependências    
-        run: npm install 
+        run: npm ci
         
       - name: Rodar o build
         run: npm run build
@@ -41,7 +41,7 @@ jobs:
 
    steps:
       - name: Checkout do código
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Instalação do Node
         uses: actions/setup-node@v4
@@ -51,7 +51,7 @@ jobs:
           cache-dependency-path: package-lock.json
 
       - name: Instalação das dependências    
-        run: npm install 
+        run: npm ci
         
       - name: Rodar o lint
         run: npm run lint
@@ -60,4 +60,5 @@ jobs:
         run: npm run format --write
         
       - name: Rodar testes
-        run: npm run test
+        run: npm run test:once
+
