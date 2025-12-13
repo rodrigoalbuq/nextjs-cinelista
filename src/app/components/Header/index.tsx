@@ -19,7 +19,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.header__container}>
         <h1 className={styles.header__logo}>
-          <Link href="/">Cinelista</Link>
+          <Link href="/">CineLista</Link>
         </h1>
 
         <button
