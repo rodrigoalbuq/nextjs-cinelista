@@ -1,17 +1,17 @@
 # Nome do workflow, aparece na "Actions"
-name: Pipeline CI/CD  
+name: Pipeline CI/CD
 # Definir quando o nosso PIPELINE será disparado
 on:
   push:
-   branches:
-   - main
-   paths: # só dispara se arquivos nessa pasta mudarem
-   - "src/**" # só mudanças no código fonte
-   - ".github/workflows/**" # mudanças nos prórpios pipelines
+    branches:
+      - main
+    paths: # só dispara se arquivos nessa pasta mudarem
+      - "src/**" # só mudanças no código fonte
+      - ".github/workflows/**" # mudanças nos prórpios pipelines
   workflow_dispatch: # habilitar o botão "Run workflow" no GitHub Actions
- 
+
 jobs:
- #Primeiro job: build
+  #Primeiro job: build
   build:
     runs-on: ubuntu-latest # Imagem da máquina usada no CI
     steps:
@@ -21,44 +21,65 @@ jobs:
       - name: Instalação do Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
-          
-      - name: Instalação das dependências    
+
+      - name: Instalação das dependências
         run: npm ci
-        
+
       - name: Rodar o build
         run: npm run build
         env:
-         TMDB_API_URL: ${{ vars.TMDB_API_URL}}
-         TMDB_API_KEY: ${{secrets.TMDB_API_KEY}}
-         NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL}}
-         
-  tests:
-   runs-on: ubuntu-latest # Imagem da máquina usada no CI
-   needs: build
+          TMDB_API_URL: ${{ vars.TMDB_API_URL}}
+          TMDB_API_KEY: ${{secrets.TMDB_API_KEY}}
+          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL}}
 
-   steps:
+  tests:
+    runs-on: ubuntu-latest # Imagem da máquina usada no CI
+    needs: build
+
+    steps:
       - name: Checkout do código
         uses: actions/checkout@v4
 
       - name: Instalação do Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
 
-      - name: Instalação das dependências    
+      - name: Instalação das dependências
         run: npm ci
-        
+
       - name: Rodar o lint
         run: npm run lint
 
       - name: Verificar formatação
         run: npm run format --write
-        
+
       - name: Rodar testes
         run: npm run test:once
+  deploy:
+    runs-on: ubuntu-latest
+    needs: tests
 
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalação do Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalação das dependências
+        run: npm ci
+
+      - name: Deploy para o Vercel
+        run: npx vercel --prod --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
