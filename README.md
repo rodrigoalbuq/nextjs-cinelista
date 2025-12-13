@@ -140,7 +140,55 @@ npm run dev          # Servidor de desenvolvimento
 npm run build        # Build de produção
 npm run start        # Servidor de produção
 npm run lint         # Linting do código
+npm run format       # Formatar código
+npm run test:once    # Executar testes uma vez
 ```
+
+## 🔄 CI/CD - GitHub Actions & Vercel
+
+O projeto possui um pipeline CI/CD automatizado que:
+
+### **Pipeline de Integração Contínua**
+
+1. **Build Job**
+   - Faz checkout do código
+   - Instala Node.js 20
+   - Instala dependências com `npm ci`
+   - Executa build (`npm run build`)
+
+2. **Tests Job** (depende do Build)
+   - Executa linting (`npm run lint`)
+   - Verifica formatação (`npm run format`)
+   - Roda testes (`npm run test:once`)
+
+3. **Deploy Job** (depende dos Tests)
+   - Faz deploy automático para Vercel
+   - Usa secrets: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`
+
+### **Configuração do Deploy**
+
+Para fazer deploy automático:
+
+1. **Adicione os Secrets no GitHub:**
+   - `VERCEL_TOKEN` - Gere em https://vercel.com/account/tokens
+   - `VERCEL_ORG_ID` - ID da organização Vercel
+   - `VERCEL_PROJECT_ID` - ID do projeto Vercel
+
+2. **Configuração no GitHub:**
+   - Vá para **Settings** > **Secrets and variables** > **Actions**
+   - Clique em **New repository secret**
+   - Adicione cada um dos 3 secrets acima
+
+3. **O deploy acontece automaticamente quando:**
+   - Houver push na branch `main`
+   - Arquivos em `src/**` ou `.github/workflows/**` forem modificados
+   - Ou manualmente via `workflow_dispatch`
+
+### **Verificar Status do Pipeline**
+
+- Acesse a aba **Actions** do repositório
+- Veja o status de cada job
+- Clique no workflow para detalhes
 
 ## 🎯 Funcionalidades Futuras
 
