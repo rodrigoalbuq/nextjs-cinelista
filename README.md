@@ -3,9 +3,9 @@
 Uma aplicação moderna de catálogo de filmes construída com **Next.js 15**, **TypeScript** e integração com a API do **TMDB** (The Movie Database).
 
 ## Propósito
-Convesando com meus amigos, percebi que muitos tinham dificuldades em encontrar filmes
-Dito isso, decidi utilizar meus conhecimentos como desenvolvedor Front-end no intuito de criar uma aplicação para facilitar buscas
-Implementei o front-end em React, consumindo a API do TMDB
+Convesando com meus amigos, percebi que muitos tinham dificuldades em encontrar filmes.
+Dito isso, decidi utilizar meus conhecimentos como desenvolvedor Front-end no intuito de criar uma aplicação para facilitar buscas.
+Implementei o front-end em React, consumindo a API do TMDB.
 O projeto foi usado por mais de 80 pessoas e me ensinou sobre autenticação e UX
 
 ## ✨ Características
