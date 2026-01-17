@@ -1,4 +1,4 @@
-# 🎬 Cinelista: https://nextjs-cinelista-xi.vercel.app/
+# 🎬 Cinelista: [Site](https://nextjs-cinelista-xi.vercel.app/)
 
 Uma aplicação moderna de catálogo de filmes construída com **Next.js 15**, **TypeScript** e integração com a API do **TMDB** (The Movie Database).
 
