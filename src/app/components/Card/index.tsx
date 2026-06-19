@@ -21,6 +21,8 @@ const Card = ({ filme, priority = false }: Props) => {
           width={300}
           height={200}
           priority={priority}
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
         />
         <div className={styles.card__info}>
           <h3 className={styles.card__title}>{title}</h3>

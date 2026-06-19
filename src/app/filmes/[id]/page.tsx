@@ -54,6 +54,9 @@ const DetalheFilme = async ({ params }: Props) => {
           alt={`Poster do filme ${title}`}
           width={500}
           height={750}
+          priority
+          loading="eager"
+          fetchPriority="high"
         />
 
         <div className={styles.detalhes__info}>

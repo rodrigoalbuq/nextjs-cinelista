@@ -1,6 +1,6 @@
 # 🎬 Cinelista: [Site](https://nextjs-cinelista-xi.vercel.app/)
 
-Uma aplicação moderna de catálogo de filmes construída com **Next.js 15**, **TypeScript** e integração com a API do **TMDB** (The Movie Database).
+Uma aplicação moderna de catálogo de filmes construída com **Next.js 16**, **TypeScript** e integração com a API do **TMDB** (The Movie Database).
 
 ## Propósito
 
@@ -21,6 +21,7 @@ O projeto foi usado por mais de 80 pessoas e me ensinou sobre autenticação e U
 
 - **Listagem de filmes** em alta/populares/top-rated
 - **Detalhes completos** de cada filme
+- **Theme switcher** (modo claro/escuro)
 - **Design responsivo** e moderno
 - **Animações fluidas** e efeitos visuais
 - **Fallback inteligente** para dados locais
@@ -35,11 +36,28 @@ O projeto foi usado por mais de 80 pessoas e me ensinou sobre autenticação e U
 
 ### 🔧 **Tecnologias**
 
-- **Next.js 15** com App Router
+- **Next.js 16** com App Router
 - **TypeScript** para type safety
 - **CSS Modules** para estilização modular
 - **Axios** para requisições HTTP
 - **TMDB API** para dados de filmes reais
+
+## ✅ Validação Técnica
+
+Última validação: **2026-06-19**
+
+- **Lint:** passou
+- **Testes:** 4 suítes, 7 testes, todos passando
+- **Build:** passou com sucesso
+- **Observação:** warning informativo de baseline-browser-mapping ainda pode aparecer no terminal, sem impactar testes/build
+
+Comandos executados:
+
+```bash
+npm run lint
+npm run test:once
+npm run build
+```
 
 ## 🚀 Como Executar
 
@@ -209,7 +227,7 @@ Para fazer deploy automático:
 - [ ] **Paginação** para grandes listas
 - [ ] **Filtros avançados** (ano, gênero, rating)
 - [ ] **Lista de favoritos** com localStorage
-- [ ] **Theme switcher** (dark/light mode)
+- [x] **Theme switcher** (dark/light mode)
 - [ ] **PWA** com offline support
 
 ## 🤝 Contribuições

@@ -1,13 +1,40 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #e50914;
+  --header-bg: #f8f8f8;
+  --header-link: #2b2b2b;
+  --header-border: #d8d8d8;
+  --header-hover-bg: rgba(229, 9, 20, 0.12);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --header-bg: #1f1f1f;
+    --header-link: #d0d0d0;
+    --header-border: #3a3a3a;
+    --header-hover-bg: rgba(229, 9, 20, 0.16);
   }
+}
+
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+  --header-bg: #f8f8f8;
+  --header-link: #2b2b2b;
+  --header-border: #d8d8d8;
+  --header-hover-bg: rgba(229, 9, 20, 0.12);
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --header-bg: #1f1f1f;
+  --header-link: #d0d0d0;
+  --header-border: #3a3a3a;
+  --header-hover-bg: rgba(229, 9, 20, 0.16);
 }
 
 html,
@@ -36,8 +63,10 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
 }
