@@ -35,3 +35,20 @@ export const getTopMovies = async () => {
   const res = await tmdbApi.get<Data>("/movie/top_rated?language=pt-BR");
   return res.data.results;
 };
+
+export const searchMoviesByTitle = async (title: string) => {
+  const trimmedTitle = title.trim();
+
+  if (!trimmedTitle) {
+    return [];
+  }
+
+  const res = await tmdbApi.get<Data>("/search/movie", {
+    params: {
+      language: "pt-BR",
+      query: trimmedTitle,
+    },
+  });
+
+  return res.data.results;
+};

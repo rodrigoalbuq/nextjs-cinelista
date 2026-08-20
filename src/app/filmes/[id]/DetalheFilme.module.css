@@ -27,6 +27,35 @@
   transform: scale(1.05);
 }
 
+.detalhes__imagemPlaceholder {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba(229, 9, 20, 0.2), rgba(255, 209, 102, 0.18)),
+    rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.detalhes__imagemBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  min-height: 96px;
+  padding: 20px;
+  border-radius: 999px;
+  background: rgba(15, 15, 15, 0.28);
+  color: #fff6d6;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
 .detalhes__info {
   flex: 1;
   display: flex;
@@ -49,6 +78,54 @@
   color: #ddd;
   margin-bottom: 30px;
   text-align: justify;
+}
+
+.avaliacao {
+  margin-top: auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.avaliacao__titulo {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.avaliacao__estrelas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.avaliacao__estrela {
+  border: 0;
+  background: transparent;
+  color: #666;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.avaliacao__estrela:hover {
+  color: #ffd166;
+  transform: scale(1.08);
+}
+
+.avaliacao__estrela--ativa {
+  color: #ffd166;
+}
+
+.avaliacao__estrela:focus-visible {
+  outline: 2px solid #ffd166;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 .detalhes__voltar {
@@ -122,6 +199,13 @@
     align-self: center;
   }
 
+  .detalhes__imagemPlaceholder {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    align-self: center;
+  }
+
   .detalhes__info h2 {
     font-size: 2rem;
     text-align: center;
@@ -130,6 +214,10 @@
   .detalhes__info p {
     font-size: 1rem;
     text-align: left;
+  }
+
+  .avaliacao {
+    margin-top: 8px;
   }
 
   .detalhes__voltar {

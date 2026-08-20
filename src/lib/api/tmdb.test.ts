@@ -1,5 +1,5 @@
 import tmdbApi from "./axios";
-import { getTrendindMovies } from "./tmdb";
+import { getTrendindMovies, searchMoviesByTitle } from "./tmdb";
 
 jest.mock("./axios");
 
@@ -17,5 +17,23 @@ test("Retorna filmes em destaque corretamente", async () => {
   const filmes = await getTrendindMovies();
 
   //Assert - garanto que o resultado é o esperado
+  expect(filmes).toEqual(mockResults);
+});
+
+test("Busca filmes pelo titulo corretamente", async () => {
+  const mockResults = [{ id: 2, title: "Matrix" }];
+  const mockedTmdbApi = tmdbApi as jest.Mocked<typeof tmdbApi>;
+  mockedTmdbApi.get.mockResolvedValue({
+    data: { results: mockResults },
+  });
+
+  const filmes = await searchMoviesByTitle("Matrix");
+
+  expect(mockedTmdbApi.get).toHaveBeenCalledWith("/search/movie", {
+    params: {
+      language: "pt-BR",
+      query: "Matrix",
+    },
+  });
   expect(filmes).toEqual(mockResults);
 });
