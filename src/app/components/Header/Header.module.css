@@ -22,6 +22,10 @@
   font-weight: bold;
 }
 
+.header__mobileControls {
+  display: contents;
+}
+
 .header__hamburger {
   display: none;
   flex-direction: column;
@@ -328,6 +332,7 @@
 
 .header__mobileTop {
   display: none;
+  justify-content: flex-end;
 }
 
 .header__close {
@@ -341,6 +346,12 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .header__mobileControls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .header__hamburger {
     display: flex;
   }
@@ -395,8 +406,11 @@
   .header__mobileTop {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
+    justify-content: center;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .header__themeButton_desktop {

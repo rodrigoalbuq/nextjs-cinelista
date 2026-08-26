@@ -261,33 +261,35 @@ const Header = ({ initialTheme }: HeaderProps) => {
           <Link href="/">CineLista</Link>
         </h1>
 
-        {!isMenuOpen && (
+        <div className={styles.header__mobileControls}>
           <button
-            className={styles.header__hamburger}
-            onClick={toggleMenu}
-            aria-label="Menu"
+            type="button"
+            className={`${styles.header__themeButton} ${styles.header__themeButton_mobile}`}
+            onClick={toggleTheme}
+            aria-label={`Ativar modo ${theme === "dark" ? "claro" : "escuro"}`}
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span aria-hidden="true" className={styles.header__themeIcon}>
+              {theme === "dark" ? "☀" : "🌙"}
+            </span>
           </button>
-        )}
+
+          {!isMenuOpen && (
+            <button
+              className={styles.header__hamburger}
+              onClick={toggleMenu}
+              aria-label="Menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          )}
+        </div>
 
         <nav
           className={`${styles.header__nav} ${isMenuOpen ? styles.header__nav_open : ""}`}
         >
           <div className={styles.header__mobileTop}>
-            <button
-              type="button"
-              className={`${styles.header__themeButton} ${styles.header__themeButton_mobile}`}
-              onClick={toggleTheme}
-              aria-label={`Ativar modo ${theme === "dark" ? "claro" : "escuro"}`}
-            >
-              <span aria-hidden="true" className={styles.header__themeIcon}>
-                {theme === "dark" ? "☀" : "🌙"}
-              </span>
-            </button>
-
             <button
               type="button"
               className={styles.header__close}
